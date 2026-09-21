@@ -37,6 +37,24 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
        homework/files       AI analysis
 ```
 
+## Tech Stack
+
+| Layer          | Technology                              | Why                                     |
+| -------------- | --------------------------------------- | --------------------------------------- |
+| Frontend       | **Next.js + TypeScript**                | Great for dashboard/web app             |
+| UI             | **Tailwind CSS + shadcn/ui**            | Fast to build a clean admin UI          |
+| Backend        | **FastAPI + Python**                    | Excellent if you want AI features later |
+| Database       | **PostgreSQL**                          | Reliable relational DB                  |
+| ORM            | **SQLModel / SQLAlchemy**               | Good fit with FastAPI                   |
+| Authentication | **JWT / HTTP-only cookies**             | Simple single-teacher authentication    |
+| File storage   | **S3-compatible storage**               | Homework, receipts, documents           |
+| Charts         | **Recharts**                            | Student performance analytics           |
+| PDF            | **ReportLab** or browser PDF generation | Receipts/reports                        |
+| Notifications  | **WhatsApp/Email later**                | Don't need initially                    |
+| Deployment     | **Docker + Ubuntu VPS**                 | Easy deployment and backup              |
+| Reverse proxy  | **Caddy**                               | Easier HTTPS setup                      |
+| AI             | **OpenAI API / local LLM later**        | Student analysis/report generation      |
+
 ## Project Structure
 
 ### Backend
