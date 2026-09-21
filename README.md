@@ -1,5 +1,107 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Architecture
+
+```
+                    Browser
+                       │
+                       ▼
+              ┌─────────────────┐
+              │    Next.js      │
+              │   TypeScript    │
+              │ Tailwind/shadcn │
+              └────────┬────────┘
+                       │ REST API
+                       ▼
+              ┌─────────────────┐
+              │     FastAPI     │
+              │     Python      │
+              ├─────────────────┤
+              │ Authentication  │
+              │ Students        │
+              │ Classes         │
+              │ Attendance      │
+              │ Homework        │
+              │ Payments        │
+              │ Analytics       │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   PostgreSQL    │
+              └─────────────────┘
+                       │
+             ┌─────────┴─────────┐
+             ▼                   ▼
+        Object Storage         AI API
+       homework/files       AI analysis
+```
+
+## Project Structure
+
+### Backend
+
+```
+backend/
+├── app/
+│   ├── main.py
+│   ├── models/
+│   │   ├── student.py
+│   │   ├── parent.py
+│   │   ├── class.py
+│   │   ├── attendance.py
+│   │   ├── homework.py
+│   │   ├── exam.py
+│   │   └── payment.py
+│   │
+│   ├── api/
+│   │   ├── students.py
+│   │   ├── classes.py
+│   │   ├── attendance.py
+│   │   ├── homework.py
+│   │   ├── payments.py
+│   │   └── analytics.py
+│   │
+│   ├── services/
+│   │   ├── attendance_service.py
+│   │   ├── payment_service.py
+│   │   ├── report_service.py
+│   │   └── ai_service.py
+│   │
+│   └── core/
+│       ├── config.py
+│       └── security.py
+│
+└── tests/
+```
+
+### Frontend
+
+```
+frontend/
+├── app/
+│   ├── dashboard/
+│   ├── students/
+│   ├── classes/
+│   ├── attendance/
+│   ├── homework/
+│   ├── payments/
+│   ├── reports/
+│   └── settings/
+│
+├── components/
+│   ├── ui/
+│   ├── students/
+│   ├── attendance/
+│   └── payments/
+│
+├── lib/
+│   ├── api.ts
+│   └── auth.ts
+│
+└── types/
+```
+
 ## Getting Started
 
 First, run the development server:
